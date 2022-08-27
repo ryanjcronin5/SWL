@@ -4,6 +4,17 @@
 	<h1>Your Profile</h1>
 </div>
 
+<div id="myModal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<h1>Event</h1>
+		<?php
+		echo "<h4>Title: ".$yourEvent."</h4>";
+		?>
+	</div>
+</div>
+
+
 <section id="content1">
 	<div class="container">
 		<?php 
@@ -23,24 +34,17 @@
 		$sql = "SELECT ID, eventName, evLocation, evDTime, evNotes, Approved FROM events WHERE CreaterId = '{$_SESSION["userid"]}' ORDER BY evLocation";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
+			global $yourEvent;
 			while($row = $result->fetch_assoc()) {
-				$yourEvent = $row["ID"];
-				echo '<ul><li>Title: ' . $row["eventName"]. '</li><li>Location: ' . $row["evLocation"]. '</li><li>Time: ' . $row["evDTime"]. '</li><li>Details: ' .$row["evNotes"]. '</li><br></ul>';
+				$yourEvent = $row["eventName"];
+				echo '<ul><li>Title: '.$row["eventName"].'</li><li>Location: '.$row["evLocation"].'</li><li>Time: '.$row["evDTime"].'</li><li>Details: '.$row["evNotes"].'</li><button id="myBtn">View</button><br></ul>';
 			}
 		} else {
 			echo "<br>"."0 results";
-		}?>
-		
-		<h3>Score:</h3>
-		<?php
-		$sql = "SELECT * FROM userDetail WHERE eventID = '{$yourEvent}' INNER JOIN events ON userDetail.eventsId=events.ID ORDER BY RAND()";
-		$result = $conn->query($sql);
-		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				echo '<ul><li>'.$row["userID"].'</li></ul>';
-			}
 		}
-		
+		echo $row[0][0];?>
+		<script src="script.js"></script>
+		<?php
 		
 		if ($_SESSION["useruid"] == "RCronin") {
 			echo "<h3>Admin: Waiting to be approved</h3>";
