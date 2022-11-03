@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav a {
+    text-align: center;
+    color: #f2f2f2;
+    float: left;
+    padding: 0.8rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.nav a.active {
+    background-color: #b8b8b8;
+    color: white;
+}
+
+.subitem1 {
+    border: 1px solid blue;
+}
+
+.subitem2 {
+    border: 1px solid blue;
+}
+
+.subitem1:focus {
+    background: gray;
+}
+
+.subitem2:focus {
+    background: gray;
+}
+
+button {
+    padding: 0.5rem;
+    background: #333;
+    color: white;
+    border: 0px;
+}
+
+button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#fbutton {
+    background-color: #1da774;
+    color: white;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#fbutton:hover,
+#sbutton {
+    opacity: 0.8;
+}
+
+.container,
+.event {
+    padding-left: 14px;
+    padding-right: 16px;
+    border: 3px solid #f1f1f1;
+    padding-bottom: 0.5rem;
+    min-width: 6rem;
+}
+
+footer {
+    background-color: #333;
+    padding-top: 0%;
+    margin-top: 10%;
+    margin-bottom: 0%;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+footer p,
+footer a {
+    color: #ddd;
+}
+
+#EC3 .container {
+    min-height: 5rem;
+}
+
+.container:has(+ button) {
+    padding-top: 1rem;
+}

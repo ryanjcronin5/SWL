@@ -1,0 +1,73 @@
+body {
+    display: grid;
+    grid: 3rem auto auto auto auto auto auto auto auto/ 10rem 10rem 1fr 5rem 1fr 10rem 10rem;
+    margin: 0%;
+    grid-row-gap: 0.5rem;
+    grid-column-gap: 0.25rem;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    align-items: start;
+    justify-items: stretch;
+}
+.nav {
+    grid-column: 1 / end;
+    grid-row: 1;
+}
+.header {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    grid-row-gap: 0;
+}
+footer {
+    grid-column: 1 / end;
+    grid-row: 9;
+}
+
+#sign {
+    grid-column: 1 / 8;
+}
+#C1 {
+    grid-column: 2 / 4;
+    grid-row: 3;
+}
+#C2 {
+    grid-column: 5 / 7;
+    grid-row: 3 / end;
+}
+#C3 {
+    grid-column: 2 / 4;
+    grid-row: 4 / 7;    
+}
+#PC1 {
+    grid-column: 1 / 2;
+}
+#PC2 {
+    grid-column: 2 / 5;
+}
+#PC3 {
+    grid-column: 5 / 8;
+}
+#EC1 {
+    display: grid;
+    grid-column: 2 / 7;
+    grid-row: 3;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+#EC2 {
+    grid-column: 2 / 7;
+    grid-row: 4;
+}
+#EC3 {
+    grid-column: 2 / 7;
+    grid-row: 5;
+}
+.subitem1 {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+.subitem2 {
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
